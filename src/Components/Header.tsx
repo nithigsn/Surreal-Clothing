@@ -37,12 +37,12 @@ const Header: React.FC = () => {
                     </div>
                     {
                         search &&
-                        <div className="flex justify-center items-center w-[90vw] ml-4  h-8 bg-white absolute left-0 z-30 rounded-3xl" >
+                        <div className="flex justify-center items-center w-[95vw] ml-4  h-8 bg-white absolute left-0 z-30 rounded-3xl" >
                             <input
                                 type="text"
                                 name='search'
                                 placeholder='Search'
-                                className='w-[80vw] rounded-3xl text-black border-none outline-none' />
+                                className='w-[90vw] rounded-3xl text-black border-none outline-none' />
                             <i className="fa-solid fa-search text-black"
                                 onClick={() => setSearch((prev) => !prev)}></i>
 
