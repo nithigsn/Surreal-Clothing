@@ -18,11 +18,10 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route element={<AuthProtected />}>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/explore" element={<Explore />} />
-        </Route>
+        <Route element={<AuthProtected />}></Route>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/explore" element={<Explore />} />
       </Routes>
       <Footer />
     </>
