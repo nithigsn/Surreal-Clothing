@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import Hero from "./Pages/Hero";
 import Cart from "./Pages/Cart";
 import AuthProtected from "./ProtectedRoutes/AuthProtected";
+import Favourites from "./Pages/Favourites";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Hero />} />
         <Route element={<AuthProtected />}>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/favourites" element={<Favourites />} />
         </Route>
       </Routes>
       <Footer />

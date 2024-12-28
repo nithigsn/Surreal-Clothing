@@ -41,7 +41,10 @@ const Header: React.FC = () => {
           <div className="flex justify-center items-center size-[35px] rounded-full bg-black">
             <i className="fa-solid fa-search"></i>
           </div>
-          <div className="flex justify-center items-center size-[35px] rounded-full bg-black">
+          <div
+            className="flex justify-center items-center size-[35px] rounded-full bg-black"
+            onClick={() => navigate("/favourites")}
+          >
             <i className="fa-solid fa-heart"></i>
           </div>
 
