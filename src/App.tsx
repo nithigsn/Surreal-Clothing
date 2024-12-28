@@ -1,14 +1,14 @@
 import React from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 //Component
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 // Pages
 import Hero from "./Pages/Hero";
-import Footer from "./Components/Footer";
-import AuthProtected from "./ProtectedRoutes/AuthProtected";
 import Cart from "./Pages/Cart";
+import AuthProtected from "./ProtectedRoutes/AuthProtected";
 
 const App: React.FC = () => {
   return (

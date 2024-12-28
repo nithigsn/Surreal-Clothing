@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <div className="w-full h-[90vh] flex justify-center bg-[#111010]">
-      <div className="flex flex-col w-[90vw] pt-10 lg:pt-20 gap-y-5 lg:w-[50vw]">
+    <div className="w-full  flex justify-center bg-[#111010]  absolute pt-10 lg:pt-20 pb-10">
+      <div className="flex flex-col w-[90vw]  gap-y-5 lg:w-[50vw]">
         <div className="flex flex-col w-full gap-y-7 lg:flex-row">
           <div className="flex flex-col w-full gap-y-1 ">
             <h5 className="font-bold pb-2">Shop</h5>
