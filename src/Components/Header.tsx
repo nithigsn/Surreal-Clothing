@@ -10,14 +10,14 @@ const Header: React.FC = () => {
   const {cart}=useStore();
 
   return (
-    <div className="w-screen h-16 flex justify-center fixed z-50">
-      <div className="flex items-center justify-between w-[90vw] backdrop-blur-[2px]">
+    <div className="w-screen h-16 flex justify-center fixed z-50 ">
+      <div className="flex items-center justify-between w-[90vw] ">
         <div
           className="flex items-center justify-center size-10  rounded-full cursor-pointer"
           onClick={() => setMenu(!menu)}
         >
           <i
-            className={` fa-solid ${menu ? " fa-x" : "fa-bars"} text-white`}
+            className={` fa-solid ${menu ? " fa-x" : "fa-bars"} text-white `}
           ></i>
         </div>
         {menu && (

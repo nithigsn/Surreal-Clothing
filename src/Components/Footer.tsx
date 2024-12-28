@@ -10,18 +10,19 @@ const Footer: React.FC = () => {
             <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
             <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
             <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Joggers</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">T-shirts</p>
+
           </div>
           <div className="flex flex-col w-full gap-y-1">
-            <h5 className="font-bold pb-2">Shop</h5>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
+            <h5 className="font-bold pb-2">Info</h5>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">About US</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Career</p>
           </div>
           <div className="flex flex-col w-full gap-y-1">
-            <h5 className="font-bold pb-2">Shop</h5>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
-            <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
+            <h5 className="font-bold pb-2">Help</h5>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Contact</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Customer Service</p>
           </div>
           <div className="flex justify-center items-center h-16">
             <p className="text-center text-sm lg:text-xs">

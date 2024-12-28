@@ -4,34 +4,28 @@ import FemaleHero from "./FemaleHero";
 import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col items-center w-full h-full ">
-      <div className="flex flex-col w-[90vw] h-screen pt-16 bg-[url()]">
-        <div className="flex justify-center w-full bg-white h-[500px] mt-5" >
-          <img
-            src="https://res.cloudinary.com/dcfwaszea/image/upload/v1735359210/hmgoepprod_1_ednezm.jpg"
-            alt=""
-            className="rounded-2xl h-[500px] w-[325px] object-contain"
-          />
+      <div className="flex flex-col w-[90vw] h-screen justify-end">
+        <img
+          src="https://res.cloudinary.com/dcfwaszea/image/upload/v1735359210/hmgoepprod_1_ednezm.jpg"
+          alt=""
+          className="h-screen w-full object-cover absolute left-0 top-0 opacity-75"
+        />
+        <div className="flex flex-col w-full items-center h-96 z-10">
+         <h2 className="text-3xl font-bold">WINTER SALE IS LIVE</h2>
+         <p>Upto 60% Off</p>
+
         </div>
-        <div className="flex flex-col items-center w-full pt-4 gap-y-3">
-          <p className="text-center text-2xl">Buy the most comfort clothes</p>
-          <p className="text-xs text-center  w-[70vw] ">
-            "Step into style! Explore our curated collection of trendy outfits
-            and wardrobe essentials designed to elevate your look for every
-            occasion. Your next favorite fit is just a click away!"
-          </p>
-          <div className="flex w-full h-[50px] justify-center  items-center">
-            <button className="w-36 h-8 rounded-full border text-black bg-white " onClick={()=>navigate('/explore')}>
-              Explore
-            </button>
-          </div>
+        <div className="flex justify-between h-24 w-full z-10">
+          <p className="">Shop for Him</p>
+          <p className="">Shop for Her</p>
         </div>
       </div>
-      <MaleHero/>
-      <FemaleHero/>
+      <MaleHero />
+      <FemaleHero />
     </div>
   );
 };

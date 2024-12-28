@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { Products } from "../../Utils/Products";
-import { Product } from "../../Utils/types";
+import { Product, SIZES } from "../../Utils/types";
 import { useStore } from "../../Context/StoreContextProvider";
 
 export default function HoodieDetails() {
@@ -18,7 +18,6 @@ export default function HoodieDetails() {
 
   let hoodie: Product | undefined = Products.find((value) => value.id === id);
   console.log(hoodie);
-  
 
   if (!hoodie) {
     return <p>Hoodie not found</p>;
@@ -30,7 +29,7 @@ export default function HoodieDetails() {
 
   return (
     <div className="h-full w-full flex justify-center pt-16 pb-16">
-      <div className="flex flex-col w-[90vw] h-full gap-y-2 lg:flex-row justify-center">
+      <div className="flex flex-col w-[90vw] h-full gap-y-2 lg:flex-row justify-center lg:w-[70vw]">
         <div className="lg:w-2/4 h-[370px] ">
           <div className="flex justify-center text-start">
             <img src={hoodie.image} alt={hoodie.name} className="h-50 w-44" />
@@ -41,12 +40,11 @@ export default function HoodieDetails() {
           </div>
         </div>
 
-        <div className="lg;w-2/4 flex gap-y-3  flex-col lg:gap-y-10">
+        <div className="lg:w-[50%] flex gap-y-6 flex-col lg:gap-y-10">
           <div className="flex justify-between h-20 w-full ">
             <div>
               <h1>{hoodie.name}</h1>
-              <p>MRP inclusive of all taxes</p>
-              <p>Rs. {hoodie.price}.00</p>
+              <p className="text-xs">Rs. {hoodie.price}.00</p>
             </div>
 
             <div className="cursor-pointer">
@@ -57,39 +55,49 @@ export default function HoodieDetails() {
               )}
             </div>
           </div>
-          {/* <h3>Color</h3>
-                    <div className="flex justify-center gap-3">
-                        {HOODIES.map((value, index) => (
-                            <div key={index} className="flex flex-col items-center gap-y-2 cursor-pointer"
-                                onClick={() => handleClick(value.id)} >
-                                <img src={value.url} alt={value.color} className="size-10" />
-                                <div>
-                                    <p>{value.color}</p>
-                                </div>
-                            </div>
-                        ))}
-
-                    </div> */}
-          {/* {
-                        <div className="flex justify-around cursor-pointer">
-                            {
-                                sizes.map((value, index) => {
-                                    return (
-                                        <div className="flex items-center" key={index}>
-                                            <button
-                                                className={`w-16 h-8 border-[1px] border-black ${value === selectedSize ? "bg-red-300" : ""}`}
-                                                onClick={() => setSelectedSize(value)}
-                                            >{value}</button>
-                                        </div>
-                                    );
-                                })
-                            }
-
-                        </div>
-                    } */}
-
+          <div className="flex flex-col w-full gap-y-4">
+            <h3>Color</h3>
+            <div className="flex gap-5 overflow-scroll lg:overflow-hidden">
+              {Products.map((value, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center gap-y-2 cursor-pointer"
+                  onClick={() => handleClick(value.id)}
+                >
+                  <img
+                    src={value.image}
+                    alt={value.color}
+                    className="size-10"
+                  />
+                  <div>
+                    <p className="text-xs">{value.color}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-y-4 flex-col">
+            <h3>Size</h3>
+            {
+              <div className="flex gap-x-6 cursor-pointer lg:w-[500px]">
+                {SIZES.map((value, index) => {
+                  return (
+                    <div className="flex items-center" key={index}>
+                      <button
+                        className={`w-16 h-8 border-[1px] border-white ${
+                          value === "selectedSize" ? "bg-red-300" : ""
+                        }`}
+                      >
+                        {value}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            }
+          </div>
           <div
-            className="flex gap-1 items-center justify-center w-full h-12 lg:h-[50px] bg-black text-white "
+            className="flex gap-1 items-center justify-center w-full h-12 lg:h-[50px] bg-white text-black "
             onClick={() => addToCart(hoodie)}
           >
             <i className="fa-solid fa-shopping-bag"></i>
@@ -97,12 +105,7 @@ export default function HoodieDetails() {
           </div>
 
           <div>
-            <div>
-              <p>Find in store</p>
-            </div>
-            <div>
-              <p>Delivery Time : 2-7 Days</p>
-            </div>
+            <p>Delivery Time : 2-7 Days</p>
           </div>
 
           <div>
