@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 //Component
 import Header from "./Components/Header";
@@ -7,6 +7,8 @@ import Header from "./Components/Header";
 // Pages
 import Hero from "./Pages/Hero";
 import Footer from "./Components/Footer";
+import AuthProtected from "./ProtectedRoutes/AuthProtected";
+import Cart from "./Pages/Cart";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +16,9 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route element={<AuthProtected />}>
+          <Route path="/cart" element={<Cart />} />
+        </Route>
       </Routes>
       <Footer />
     </>

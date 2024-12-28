@@ -2,29 +2,29 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <div className="w-full h-[80vh] flex justify-center">
-      <div className="flex flex-col w-[90vw] pt-10 gap-y-5">
-        <div className="flex flex-col w-full gap-y-3">
+    <div className="w-full h-[90vh] flex justify-center bg-[#111010]">
+      <div className="flex flex-col w-[90vw] pt-10 lg:pt-20 gap-y-5 lg:w-[50vw]">
+        <div className="flex flex-col w-full gap-y-7 lg:flex-row">
           <div className="flex flex-col w-full gap-y-1 ">
             <h5 className="font-bold pb-2">Shop</h5>
-            <p className="text-sm text-[#C0BABA]">Oversized T-shirt</p>
-            <p className="text-sm text-[#C0BABA]">Hoodies</p>
-            <p className="text-sm text-[#C0BABA]">Sweatshirts</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
           </div>
           <div className="flex flex-col w-full gap-y-1">
             <h5 className="font-bold pb-2">Shop</h5>
-            <p className="text-sm text-[#C0BABA]">Oversized T-shirt</p>
-            <p className="text-sm text-[#C0BABA]">Hoodies</p>
-            <p className="text-sm text-[#C0BABA]">Sweatshirts</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
           </div>
           <div className="flex flex-col w-full gap-y-1">
             <h5 className="font-bold pb-2">Shop</h5>
-            <p className="text-sm text-[#C0BABA]">Oversized T-shirt</p>
-            <p className="text-sm text-[#C0BABA]">Hoodies</p>
-            <p className="text-sm text-[#C0BABA]">Sweatshirts</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Oversized T-shirt</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Hoodies</p>
+            <p className="text-sm lg:text-xs text-[#C0BABA]">Sweatshirts</p>
           </div>
           <div className="flex justify-center items-center h-16">
-            <p className="text-center text-sm">
+            <p className="text-center text-sm lg:text-xs">
               Sign up now and be the first to know about exclusive offers,
               latest fashion news & style tips!.
             </p>
