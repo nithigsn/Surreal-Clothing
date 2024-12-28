@@ -11,6 +11,7 @@ import Cart from "./Pages/Cart";
 import AuthProtected from "./ProtectedRoutes/AuthProtected";
 import Favourites from "./Pages/Favourites";
 import Explore from "./Pages/Explore";
+import HoodieDetails from "./Pages/ItemDetails/HoodieDetails";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,8 @@ const App: React.FC = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/hoodie/:id" element={<HoodieDetails />} />
+
       </Routes>
       <Footer />
     </>

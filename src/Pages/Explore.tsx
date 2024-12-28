@@ -1,7 +1,13 @@
 import React from "react";
 import { Products } from "../Utils/Products";
+import { useNavigate } from "react-router-dom";
 
 const Explore: React.FC = () => {
+  const navigate=useNavigate();
+
+  const handleNavigate = (id:string) =>{
+    navigate(`/hoodie/${id}`)
+  }
   return (
     <div className="flex justify-center w-full h-full pt-20 pb-16">
       <div className="flex justify-center gap-2 flex-wrap w-[90vw] lg:w-[70vw]">
@@ -11,6 +17,7 @@ const Explore: React.FC = () => {
               className="flex flex-col justify-around w-[160px] h-[260px] bg-[#0a0a0a] p-2 cursor-pointer
               bsm:w-[250px] bsm:h-[300px]"
               key={index}
+              onClick={()=>handleNavigate(value.id)}
             >
               <div className="flex relative w-full h-[200px] bsm:h-[220px]">
                 <i className="fa-solid fa-heart right-0 absolute"></i>

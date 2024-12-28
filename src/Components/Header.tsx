@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useStore } from "../Context/StoreContextProvider";
 
 const Header: React.FC = () => {
   const [menu, setMenu] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
 
   const navigate = useNavigate();
+  const {cart}=useStore();
 
   return (
     <div className="w-screen h-16 flex justify-center fixed z-50">
-      <div className="flex items-center justify-between w-[90vw]">
+      <div className="flex items-center justify-between w-[90vw] backdrop-blur-[2px]">
         <div
-          className="flex items-center justify-center size-10 bg-white rounded-full cursor-pointer"
+          className="flex items-center justify-center size-10  rounded-full cursor-pointer"
           onClick={() => setMenu(!menu)}
         >
           <i
-            className={` fa-solid ${menu ? " fa-x" : "fa-bars"} text-black`}
+            className={` fa-solid ${menu ? " fa-x" : "fa-bars"} text-white`}
           ></i>
         </div>
         {menu && (
@@ -34,19 +36,19 @@ const Header: React.FC = () => {
             </div>
           </div>
         )}
-        <div className="flex items-center justify-around w-40 h-10 bg-white rounded-full cursor-pointer">
-          <div className="flex justify-center items-center size-[35px] rounded-full bg-black">
+        <div className="flex items-center justify-around w-40 h-10  rounded-full cursor-pointer">
+          <div className="flex justify-center items-center size-[35px] rounded-full">
             <i className="fa-solid fa-user"></i>
           </div>
-          <div className="flex justify-center items-center size-[35px] rounded-full bg-black"
+          <div className="flex justify-center items-center size-[35px] rounded-full"
           onClick={()=>setSearch((prev)=>!prev)}>
             <i className="fa-solid fa-search"></i>
           </div>
           <div
-            className="flex justify-center items-center size-[35px] rounded-full bg-black"
+            className="flex justify-center items-center size-[35px] rounded-full"
             onClick={() => navigate("/favourites")}
           >
-            <i className="fa-solid fa-heart"></i>
+            <i className="fa-solid fa-heart text-red-500"></i>
           </div>
 
           {search && (
@@ -67,10 +69,11 @@ const Header: React.FC = () => {
             </div>
           )}
           <div
-            className="flex justify-center items-center size-[35px] rounded-full bg-black"
+            className="flex justify-center items-center size-[35px] rounded-full"
             onClick={() => navigate("/cart")}
           >
             <i className="fa-solid fa-bag-shopping"></i>
+            <p className="pl-1">{cart.length}</p>
           </div>
         </div>
       </div>
