@@ -1,24 +1,32 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
 //Component
-import Header from './Components/Header'
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 // Pages
-import Hero from './Pages/Hero'
-
-
+import Hero from "./Pages/Hero";
+import Cart from "./Pages/Cart";
+import AuthProtected from "./ProtectedRoutes/AuthProtected";
+import Favourites from "./Pages/Favourites";
+import Explore from "./Pages/Explore";
 
 const App: React.FC = () => {
-
   return (
     <>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path='/' element={<Hero />} />
+        <Route path="/" element={<Hero />} />
+        <Route element={<AuthProtected />}>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/explore" element={<Explore />} />
+        </Route>
       </Routes>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
