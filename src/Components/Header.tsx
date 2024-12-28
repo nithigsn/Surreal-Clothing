@@ -38,7 +38,8 @@ const Header: React.FC = () => {
           <div className="flex justify-center items-center size-[35px] rounded-full bg-black">
             <i className="fa-solid fa-user"></i>
           </div>
-          <div className="flex justify-center items-center size-[35px] rounded-full bg-black">
+          <div className="flex justify-center items-center size-[35px] rounded-full bg-black"
+          onClick={()=>setSearch((prev)=>!prev)}>
             <i className="fa-solid fa-search"></i>
           </div>
           <div

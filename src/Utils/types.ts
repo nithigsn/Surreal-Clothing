@@ -17,3 +17,15 @@ export interface CartItem {
     productType: string;
   }
   
+
+
+  export interface Product {
+    id: string;
+    name: string;
+    image: string;
+    price: number;
+    quantity: number;
+    color: string;
+    productType: string;
+  }
+

@@ -1,8 +1,10 @@
 import React from "react";
 import MaleHero from "./MaleHero";
 import FemaleHero from "./FemaleHero";
+import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
+  const navigate=useNavigate();
 
   return (
     <div className="flex flex-col items-center w-full h-full ">
@@ -22,12 +24,11 @@ const Hero: React.FC = () => {
             occasion. Your next favorite fit is just a click away!"
           </p>
           <div className="flex w-full h-[50px] justify-center  items-center">
-            <button className="w-36 h-8 rounded-full border text-black bg-white ">
+            <button className="w-36 h-8 rounded-full border text-black bg-white " onClick={()=>navigate('/explore')}>
               Explore
             </button>
           </div>
         </div>
-        
       </div>
       <MaleHero/>
       <FemaleHero/>
