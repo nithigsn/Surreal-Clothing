@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
         </div>
         <div className="flex justify-between h-24 w-full z-10">
-          <p className="">Shop for Him</p>
+          <p className="" onClick={()=>navigate('/explore')}>Shop for Him</p>
           <p className="">Shop for Her</p>
         </div>
       </div>
