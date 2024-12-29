@@ -30,17 +30,20 @@ export default function HoodieDetails() {
   return (
     <div className="h-full w-full flex justify-center pt-16 pb-16">
       <div className="flex flex-col w-[90vw] h-full gap-y-2 lg:flex-row justify-center lg:w-[70vw]">
-        <div className="lg:w-2/4 h-[370px] ">
+        <div className="lg:w-2/4 h-[370px bg-[#0c0c0c]">
           <div className="flex justify-center text-start">
-            <img src={hoodie.image} alt={hoodie.name} className="h-50 w-44" />
+            <img
+              src={hoodie.image}
+              alt={hoodie.name}
+              className="h-96 w-80 p-5"
+            />
           </div>
-          <div className="w-full h-55 flex justify-center gap-2">
+          <div className="hidden lg:flex w-full h-55 justify-center gap-2">
             <img src={hoodie.image} alt="" className="h-44 " />
             <img src={hoodie.image} alt="" className="h-44 " />
           </div>
         </div>
-
-        <div className="lg:w-[50%] flex gap-y-6 flex-col lg:gap-y-10">
+        <div className="lg:w-[600px] flex gap-y-6 flex-col lg:gap-y-10 lg:pl-5">
           <div className="flex justify-between h-20 w-full ">
             <div>
               <h1>{hoodie.name}</h1>
@@ -82,9 +85,9 @@ export default function HoodieDetails() {
               <div className="flex gap-x-6 cursor-pointer lg:w-[500px]">
                 {SIZES.map((value, index) => {
                   return (
-                    <div className="flex items-center" key={index}>
+                    <div className="flex w-full justify-center" key={index}>
                       <button
-                        className={`w-16 h-8 border-[1px] border-white ${
+                        className={`w-14 h-8 border-[1px] border-white ${
                           value === "selectedSize" ? "bg-red-300" : ""
                         }`}
                       >
@@ -97,7 +100,7 @@ export default function HoodieDetails() {
             }
           </div>
           <div
-            className="flex gap-1 items-center justify-center w-full h-12 lg:h-[50px] bg-white text-black "
+            className="sticky bottom-3 z-10 flex gap-1 items-center justify-center w-full h-12 lg:h-[70px] bg-white text-black "
             onClick={() => addToCart(hoodie)}
           >
             <i className="fa-solid fa-shopping-bag"></i>
@@ -114,10 +117,8 @@ export default function HoodieDetails() {
 
           <div className="details flex flex-col h-full  ">
             <div
-              className={`details flex flex-col border-t-[1px] border-b-[1px] border-black justify-center lg:w-[441px] ${
-                openSections.description
-                  ? "h-40 scale-in-ver-top"
-                  : "h-10 scale-in-ver-bottom"
+              className={`details flex flex-col border-t-[1px] border-b-[1px] border-white justify-center lg:w-[441px] ${
+                openSections.description ? "h-40 " : "h-10 "
               }`}
             >
               <div className="flex justify-between">
@@ -142,10 +143,8 @@ export default function HoodieDetails() {
             </div>
 
             <div
-              className={`details flex flex-col   border-black justify-center lg:w-[441px] ${
-                openSections.details
-                  ? "h-40 scale-in-ver-top"
-                  : "h-10 scale-in-ver-bottom"
+              className={`details flex flex-col border-b-[1px]  border-white justify-center lg:w-[441px] ${
+                openSections.details ? "h-40 " : "h-10 "
               }`}
             >
               <div className="flex justify-between">
@@ -168,10 +167,8 @@ export default function HoodieDetails() {
             </div>
 
             <div
-              className={`details flex flex-col border-t-[1px] border-b-[1px] border-black justify-center lg:w-[441px]  ${
-                openSections.careGuide
-                  ? "h-40 scale-in-ver-top"
-                  : "h-10 scale-in-ver-bottom"
+              className={`details flex flex-col  border-b-[1px] border-white justify-center lg:w-[441px]  ${
+                openSections.careGuide ? "h-40 " : "h-10 "
               }`}
             >
               <div className="flex justify-between">

@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const {cart}=useStore();
 
   return (
-    <div className="w-screen h-16 flex justify-center fixed z-50 ">
+    <div className="w-screen h-16 flex justify-center fixed z-50 bg-black ">
       <div className="flex items-center justify-between w-[90vw] ">
         <div
           className="flex items-center justify-center size-10  rounded-full cursor-pointer"
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
             className="flex justify-center items-center size-[35px] rounded-full"
             onClick={() => navigate("/favourites")}
           >
-            <i className="fa-solid fa-heart text-red-500"></i>
+            <i className="fa-solid fa-heart"></i>
           </div>
 
           {search && (
