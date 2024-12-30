@@ -12,6 +12,7 @@ import AuthProtected from "./ProtectedRoutes/AuthProtected";
 import Favourites from "./Pages/Favourites";
 import Explore from "./Pages/Explore";
 import HoodieDetails from "./Pages/ItemDetails/HoodieDetails";
+import CheckOut from "./Pages/CheckOut/CheckOut";
 
 const App: React.FC = () => {
   return (
@@ -20,8 +21,9 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route element={<AuthProtected />}></Route>
-        <Route path="/cart" element={<Cart />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckOut/>} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/hoodie/:id" element={<HoodieDetails />} />
 
