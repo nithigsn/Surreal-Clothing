@@ -14,7 +14,7 @@ const Explore: React.FC = () => {
 
   return (
     <div className="flex justify-center w-full h-full pt-20 pb-16">
-      <div className="flex  gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
+      <div className="flex justify-center gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
         {Products.map((value, index) => {
           return (
             <div

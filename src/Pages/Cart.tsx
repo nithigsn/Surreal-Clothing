@@ -28,7 +28,7 @@ const Cart: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="flex  gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
+          <div className="flex justify-center  gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
             {cart.map((value, index) => {
               return (
                 <div

@@ -71,12 +71,14 @@ const StoreContextProvider: React.FC<StoreContextProviderProps> = ({
   };
 
   const searchProduct = (query: string) => {
-    const results = Products.filter((product) =>
-      product.name.toLowerCase().includes(query.toLowerCase()));
-    setSearchResults(results);
-    navigate("/results");
-    if (query === "") {
+    if (query.length === 0) {
       setSearchResults([]);
+    } else {
+      const results = Products.filter((product) =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(results);
+      navigate("/results");
     }
   };
   return (

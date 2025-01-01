@@ -23,7 +23,7 @@ const Favourites: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="flex  gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
+          <div className="flex justify-center gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
             {favourites.map((value, index) => {
               return (
                 <div

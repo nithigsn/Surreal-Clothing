@@ -14,9 +14,14 @@ const Header: React.FC = () => {
   const { cart } = useStore();
 
   useEffect(() => {
-    setTimeout(() => {
-      searchProduct(query);
-    }, 500);
+    if (query.length > 0) {
+      setTimeout(() => {
+        searchProduct(query);
+      }, 500);
+    }
+    else {
+      searchProduct("");
+    }
   }, [query]);
 
   return (
@@ -68,7 +73,6 @@ const Header: React.FC = () => {
                   onClick={() => setSearch((prev) => !prev)}
                 ></i>
               </div>
-              ={" "}
             </div>
           )}
           <div
