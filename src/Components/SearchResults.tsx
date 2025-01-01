@@ -16,7 +16,7 @@ const SearchResults: React.FC = () => {
     <div className="flex justify-center   w-full h-full pt-20 pb-16">
       <div className="flex justify-center gap-2 flex-wrap w-[90vw] lg:w-[80vw]">
         {searchResults.length === 0 && (
-         <div className="flex w-full">
+         <div className="flex w-full h-[50vh] ">
              <p className="text-white text-center">No results found</p>
          </div>
         )}
