@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../Context/StoreContextProvider";
+import Menu from "./Menu";
 
 const Header: React.FC = () => {
   const [menu, setMenu] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+
+  const { searchProduct } = useStore();
 
   const navigate = useNavigate();
-  const {cart}=useStore();
+  const { cart } = useStore();
+
+  useEffect(() => {
+    setTimeout(() => {
+      searchProduct(query);
+    }, 500);
+  }, [query]);
 
   return (
     <div className="w-screen h-16 flex justify-center fixed z-50 bg-black ">
@@ -20,28 +30,15 @@ const Header: React.FC = () => {
             className={` fa-solid ${menu ? " fa-x" : "fa-bars"} text-white `}
           ></i>
         </div>
-        {menu && (
-          <div className="flex w-screen justify-center left-0 top-16 absolute lg:w-[500px]">
-            <div className="flex flex-col justify-center items-center text-white bg-[#0B0B0B] z-50 rounded-2xl w-[90vw] h-[150px]">
-              <div className="flex items-center justify-evenly w-full h-14">
-                <img src="" alt="" srcSet="" />
-                <p>Men</p>
-                <i className="fa-solid fa-arrow-right"></i>
-              </div>
-              <div className="flex items-center justify-evenly w-full h-14">
-                <img src="" alt="" srcSet="" />
-                <p>Women</p>
-                <i className="fa-solid fa-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        )}
+        {menu && <Menu />}
         <div className="flex items-center justify-around w-40 h-10  rounded-full cursor-pointer">
           <div className="flex justify-center items-center size-[35px] rounded-full">
             <i className="fa-solid fa-user"></i>
           </div>
-          <div className="flex justify-center items-center size-[35px] rounded-full"
-          onClick={()=>setSearch((prev)=>!prev)}>
+          <div
+            className="flex justify-center items-center size-[35px] rounded-full"
+            onClick={() => setSearch((prev) => !prev)}
+          >
             <i className="fa-solid fa-search"></i>
           </div>
           <div
@@ -54,11 +51,16 @@ const Header: React.FC = () => {
           {search && (
             <div className="flex w-full justify-center absolute left-0 top-3">
               <div className="flex justify-evenly items-center w-[90vw]  h-10 bg-white absolute z-30 rounded-3xl">
-                <i className="fa-solid fa-search text-black pl-5 pr-5"></i>
+                <i
+                  className="fa-solid fa-search text-black pl-5 pr-5"
+                  onClick={() => searchProduct(query)}
+                ></i>
                 <input
                   type="text"
                   name="Search"
                   placeholder="Search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                   className="w-[90vw] rounded-3xl text-black border-none outline-none "
                 />
                 <i
@@ -66,6 +68,7 @@ const Header: React.FC = () => {
                   onClick={() => setSearch((prev) => !prev)}
                 ></i>
               </div>
+              ={" "}
             </div>
           )}
           <div

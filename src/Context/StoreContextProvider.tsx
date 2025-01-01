@@ -1,5 +1,7 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { CartItem, FavoriteItem } from "../Utils/types";
+import { CartItem, FavoriteItem, Product } from "../Utils/types";
+import { Products } from "../Utils/Products";
+import { useNavigate } from "react-router-dom";
 
 type StoreContextProviderType = {
   cart: CartItem[];
@@ -10,6 +12,9 @@ type StoreContextProviderType = {
   removeFromCart: (id: string) => void;
   addToFavourites: (value: FavoriteItem) => void;
   removeFavourite: (id: string) => void;
+  searchResults: Product[];
+  setSearchResults: React.Dispatch<React.SetStateAction<Product[]>>;
+  searchProduct: (query: string) => void;
 };
 
 const StoreContext = createContext<StoreContextProviderType | undefined>(
@@ -33,6 +38,9 @@ const StoreContextProvider: React.FC<StoreContextProviderProps> = ({
 }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [favourites, setFavourites] = useState<FavoriteItem[]>([]);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+
+  const navigate = useNavigate();
 
   const addToCart = (value: CartItem) => {
     const findItem = cart.find((item) => item.id === value.id);
@@ -61,6 +69,16 @@ const StoreContextProvider: React.FC<StoreContextProviderProps> = ({
     let removedFav = favourites.filter((item) => item.id !== id);
     setFavourites(removedFav);
   };
+
+  const searchProduct = (query: string) => {
+    const results = Products.filter((product) =>
+      product.name.toLowerCase().includes(query.toLowerCase()));
+    setSearchResults(results);
+    navigate("/results");
+    if (query === "") {
+      setSearchResults([]);
+    }
+  };
   return (
     <StoreContext.Provider
       value={{
@@ -72,6 +90,9 @@ const StoreContextProvider: React.FC<StoreContextProviderProps> = ({
         removeFromCart,
         addToFavourites,
         removeFavourite,
+        searchResults,
+        setSearchResults,
+        searchProduct,
       }}
     >
       {children}

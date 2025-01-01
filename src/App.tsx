@@ -13,6 +13,7 @@ import Favourites from "./Pages/Favourites";
 import Explore from "./Pages/Explore";
 import HoodieDetails from "./Pages/ItemDetails/HoodieDetails";
 import CheckOut from "./Pages/CheckOut/CheckOut";
+import SearchResults from "./Components/SearchResults";
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/checkout" element={<CheckOut/>} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/hoodie/:id" element={<HoodieDetails />} />
+        <Route path="/results" element={<SearchResults />} />
 
       </Routes>
       <Footer />
