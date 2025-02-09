@@ -28,7 +28,6 @@ const App: React.FC = () => {
         <Route path="/explore" element={<Explore />} />
         <Route path="/hoodie/:id" element={<HoodieDetails />} />
         <Route path="/results" element={<SearchResults />} />
-
       </Routes>
       <Footer />
     </>

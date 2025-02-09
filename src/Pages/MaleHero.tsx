@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 const MaleHero: React.FC = () => {
   const navigate = useNavigate();
+  const handleNavigate = () =>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });  
+    navigate("/explore");
+    
+  }
   return (
     <div className="flex justify-center w-full h-screen mt-10 mb-10">
       <div className="flex  w-[90vw] h-screen justify-center absolute">
@@ -23,7 +31,7 @@ const MaleHero: React.FC = () => {
           <h4 className="text-3xl">NEW ENERGY</h4>
           <button
             className="w-32 h-8 bg-white text-black rounded-full"
-            onClick={() => navigate("/explore")}
+            onClick={handleNavigate}
           >
             Explore
           </button>
